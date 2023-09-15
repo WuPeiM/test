@@ -1,0 +1,15 @@
+<!-- send.html文件 -->
+<body style="text-align: right">
+  <input id="msg" type="text" />
+  <button id="send">发送</button>
+  <script>
+    //建立到服务端webSocket连接
+    var ws = new WebSocket('ws://localhost:8080')
+    send.onclick = function () {
+      if (msg.value.trim() !== '') {
+        // 将消息发到服务器
+        ws.send(msg.value.trim())
+      }
+    }
+  </script>
+</body>

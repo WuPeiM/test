@@ -1,0 +1,15 @@
+<!-- receive.html文件 -->
+<body>
+  <h1>收到消息：<span id="recMsg"></span></h1>
+  <script>
+    //建立到服务端webSocket连接
+    var ws = new WebSocket('ws://localhost:8080')
+    //当连接被打开时，注册接收消息的处理函数
+    ws.onopen = function (event) {
+      //当有消息发过来时，就将消息放到显示元素上
+      ws.onmessage = function (event) {
+        recMsg.innerHTML = event.data
+      }
+    }
+  </script>
+</body>
