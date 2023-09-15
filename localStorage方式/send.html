@@ -1,0 +1,14 @@
+<!-- send.html -->
+<body>
+  <input id="msg1" type="text" />
+  <input id="msg2" type="text" />
+  <button id="send">发送</button>
+  <script>
+    send.onclick = function () {
+      if (msg1.value.trim() !== '' && msg2.value.trim() !== '') {
+        localStorage.setItem('msg1', msg1.value.trim())
+        localStorage.setItem('msg2', msg2.value.trim())
+      }
+    }
+  </script>
+</body>

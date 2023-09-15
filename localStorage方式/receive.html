@@ -1,0 +1,15 @@
+<!-- receive.html -->
+<body>
+  <h1>收到消息：<span id="recMsg"></span></h1>
+  <script>
+    function load() {
+      recMsg.innerHTML = localStorage.getItem('msg1')
+    }
+    load()
+    // 任何页面修改了localStorage的值，都会自动触发其他页面中的storage事件
+    // 只要storage一变化我们读取localStorage中对应的值显示到页面上
+    window.addEventListener('storage', function () {
+      load()
+    })
+  </script>
+</body>
