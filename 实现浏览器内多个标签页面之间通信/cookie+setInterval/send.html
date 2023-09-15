@@ -1,0 +1,15 @@
+<!-- send.html -->
+<body>
+  <input id="msg" type="text" />
+  <button id="send">发送</button>
+  <script>
+    send.onclick = function () {
+      // 输入框里有值才会往cookie里存
+      if (msg.value.trim() !== '') {
+        // cookie里面存的是‘变量名=值’的形式
+        document.cookie = 'msg=' + msg.value.trim()
+      }
+    }
+    console.log(document.cookie)
+  </script>
+</body>

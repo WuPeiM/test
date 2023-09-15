@@ -1,0 +1,17 @@
+<!-- receive.html -->
+<body>
+  <h1>收到消息：<span id="recMsg"></span></h1>
+  <script>
+    function getValue(key) {
+      var cookies =
+        '{"' +
+        document.cookie.replace(/=/g, '":"').replace(/;\s+/g, '", "') +
+        '"}'
+      cookies = JSON.parse(cookies)
+      return cookies[key]
+    }
+    setInterval(function () {
+      recMsg.innerHTML = getValue('msg')
+    }, 500)
+  </script>
+</body>
